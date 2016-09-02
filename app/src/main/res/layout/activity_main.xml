@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.jessica.studentjournalplanner.MainActivity"
+    android:rowCount="3"
+    android:columnCount="1"
+    android:background="@color/lightBlue">
+
+    <EditText
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/student_id"
+        android:ems="10"
+        android:id="@+id/studentId"
+        android:layout_marginTop="130dp"
+        android:textColorHint="@color/white"
+        android:background="@null"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/UnderLine"
+        android:layout_alignStart="@+id/UnderLine" />
+
+    <View
+        android:id="@+id/UnderLine"
+        android:layout_width="270dp"
+        android:layout_height="2dp"
+        android:layout_below="@+id/studentId"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        />
+
+    <EditText
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/password"
+        android:layout_below="@+id/studentId"
+        android:layout_alignLeft="@+id/studentId"
+        android:layout_alignStart="@+id/studentId"
+        android:hint="@string/password"
+        android:textColorHint="@color/white"
+        android:background="@null"
+        android:layout_marginTop="23dp"/>
+
+    <View
+        android:id="@+id/UnderLine2"
+        android:layout_width="270dp"
+        android:layout_height="2dp"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:id="@+id/loginButton"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/password"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_alignRight="@+id/password"
+        android:layout_alignEnd="@+id/password"
+        android:background="@color/lightBlue"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
