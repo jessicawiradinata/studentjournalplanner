@@ -3,8 +3,25 @@
     <string name="student_id">Student ID</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+
     <string name="home_description">Navigate to Home</string>
     <string name="search_description">Navigate to Browse</string>
     <string name="add_description">Navigate to Add</string>
     <string name="journal_description">Navigate to My Journal</string>
+
+    <string name="upcoming_events">Upcoming events</string>
+    <string name="upcoming_assignments">Upcoming Assignments</string>
+
+    <string name="event_title1">LinkedIn Lab</string>
+    <string name="event_title2">Network Cafe</string>
+    <string name="event_title3">GenerationYou Event</string>
+
+    <string name="event_time1">Next Tuesday</string>
+    <string name="event_time2">Next Friday</string>
+    <string name="event_time3">Next Wednesday</string>
+
+    <string name="assignment_title1">Peer Design Review</string>
+    <string name="assignment_title2">Mid Semester Deliverables</string>
+    <string name="assignment_title3">Persona Interaction Design</string>
+
 </resources>

@@ -5,6 +5,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.jessica.studentjournalplanner.HomeActivity">
 
+    <TextView
+        android:layout_width="450dp"
+        android:layout_height="60dp"
+        android:text=""
+        android:background="@color/titleBlue"
+        android:id="@+id/titleBackground1"
+        />
 
     <TextView
         android:layout_width="450dp"
@@ -76,4 +83,266 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="5dp"
         android:contentDescription="@string/journal_description"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upcoming_events"
+        android:id="@+id/upcomingEvents"
+        android:layout_alignTop="@+id/titleBackground1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="@dimen/event_list_width"
+        android:layout_height="@dimen/event_list_height"
+        android:text=""
+        android:background="@color/white"
+        android:id="@+id/listBackground1"
+        android:layout_below="@+id/titleBackground1"
+        android:layout_alignLeft="@+id/titleBackground1"
+        android:layout_alignStart="@+id/titleBackground1" />
+
+    <View
+        android:id="@+id/underline1"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/underline"
+        android:layout_alignBottom="@+id/listBackground1"
+        android:layout_alignLeft="@+id/listBackground1"
+        android:layout_alignStart="@+id/listBackground1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_title1"
+        android:id="@+id/eventTitle1"
+        android:layout_alignTop="@+id/listBackground1"
+        android:layout_alignLeft="@+id/listBackground1"
+        android:layout_alignStart="@+id/listBackground1"
+        android:layout_marginTop="@dimen/event_list_top_margin"
+        android:layout_marginLeft="@dimen/event_list_left_margin"
+        android:layout_marginStart="@dimen/event_list_left_margin"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_time1"
+        android:id="@+id/eventTime1"
+        android:layout_below="@+id/titleBackground1"
+        android:layout_alignRight="@+id/titleBackground1"
+        android:layout_alignEnd="@+id/titleBackground1"
+        android:layout_marginTop="@dimen/event_list_top_margin"
+        android:layout_marginEnd="@dimen/event_list_left_margin"
+        android:layout_marginRight="@dimen/event_list_left_margin"
+        android:textSize="16sp"
+        android:textColor="@color/fadeGray"/>
+
+    <TextView
+        android:layout_width="@dimen/event_list_width"
+        android:layout_height="@dimen/event_list_height"
+        android:text=""
+        android:background="@color/white"
+        android:id="@+id/listBackground2"
+        android:layout_below="@+id/underline1"
+        android:layout_alignLeft="@+id/underline1"
+        android:layout_alignStart="@+id/underline1" />
+
+    <View
+        android:id="@+id/underline2"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/underline"
+        android:layout_alignBottom="@+id/listBackground2"
+        android:layout_alignLeft="@+id/listBackground2"
+        android:layout_alignStart="@+id/listBackground2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_title2"
+        android:id="@+id/eventTitle2"
+        android:layout_alignTop="@+id/listBackground2"
+        android:layout_alignLeft="@+id/listBackground2"
+        android:layout_alignStart="@+id/listBackground2"
+        android:layout_marginTop="@dimen/event_list_top_margin"
+        android:layout_marginLeft="@dimen/event_list_left_margin"
+        android:layout_marginStart="@dimen/event_list_left_margin"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_time1"
+        android:id="@+id/eventTime2"
+        android:layout_below="@+id/listBackground1"
+        android:layout_alignRight="@+id/listBackground1"
+        android:layout_alignEnd="@+id/listBackground1"
+        android:layout_marginTop="@dimen/event_list_top_margin"
+        android:layout_marginEnd="@dimen/event_list_left_margin"
+        android:layout_marginRight="@dimen/event_list_left_margin"
+        android:textSize="16sp"
+        android:textColor="@color/fadeGray"/>
+
+    <TextView
+        android:layout_width="@dimen/event_list_width"
+        android:layout_height="@dimen/event_list_height"
+        android:text=""
+        android:background="@color/white"
+        android:id="@+id/listBackground3"
+        android:layout_below="@+id/underline2"
+        android:layout_alignLeft="@+id/underline2"
+        android:layout_alignStart="@+id/underline2" />
+
+    <View
+        android:id="@+id/underline3"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/underline"
+        android:layout_alignBottom="@+id/listBackground3"
+        android:layout_alignLeft="@+id/listBackground3"
+        android:layout_alignStart="@+id/listBackground3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_title3"
+        android:id="@+id/eventTitle3"
+        android:layout_alignTop="@+id/listBackground3"
+        android:layout_alignLeft="@+id/listBackground3"
+        android:layout_alignStart="@+id/listBackground3"
+        android:layout_marginTop="@dimen/event_list_top_margin"
+        android:layout_marginLeft="@dimen/event_list_left_margin"
+        android:layout_marginStart="@dimen/event_list_left_margin"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_time2"
+        android:id="@+id/eventTime3"
+        android:layout_below="@+id/listBackground2"
+        android:layout_alignRight="@+id/listBackground2"
+        android:layout_alignEnd="@+id/listBackground2"
+        android:layout_marginTop="@dimen/event_list_top_margin"
+        android:layout_marginEnd="@dimen/event_list_left_margin"
+        android:layout_marginRight="@dimen/event_list_left_margin"
+        android:textSize="16sp"
+        android:textColor="@color/fadeGray"/>
+
+    <TextView
+        android:layout_width="450dp"
+        android:layout_height="60dp"
+        android:text=""
+        android:background="@color/titleBlue"
+        android:id="@+id/titleBackground2"
+        android:layout_below="@+id/underline3"
+        android:layout_alignLeft="@+id/underline3"
+        android:layout_alignStart="@+id/underline3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upcoming_assignments"
+        android:id="@+id/upcomingAssignments"
+        android:layout_alignTop="@+id/titleBackground2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="@dimen/event_list_width"
+        android:layout_height="@dimen/event_list_height"
+        android:text=""
+        android:background="@color/white"
+        android:id="@+id/listBackground4"
+        android:layout_below="@+id/titleBackground2"
+        android:layout_alignLeft="@+id/titleBackground2"
+        android:layout_alignStart="@+id/titleBackground2" />
+
+    <View
+        android:id="@+id/underline4"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/underline"
+        android:layout_alignBottom="@+id/listBackground4"
+        android:layout_alignLeft="@+id/listBackground4"
+        android:layout_alignStart="@+id/listBackground4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/assignment_title1"
+        android:id="@+id/assignmentTitle1"
+        android:layout_alignTop="@+id/listBackground4"
+        android:layout_alignLeft="@+id/listBackground4"
+        android:layout_alignStart="@+id/listBackground4"
+        android:layout_marginTop="@dimen/event_list_top_margin"
+        android:layout_marginLeft="@dimen/event_list_left_margin"
+        android:layout_marginStart="@dimen/event_list_left_margin"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_time3"
+        android:id="@+id/eventTime4"
+        android:layout_below="@+id/titleBackground2"
+        android:layout_alignRight="@+id/listBackground2"
+        android:layout_alignEnd="@+id/listBackground2"
+        android:layout_marginTop="@dimen/event_list_top_margin"
+        android:layout_marginEnd="@dimen/event_list_left_margin"
+        android:layout_marginRight="@dimen/event_list_left_margin"
+        android:textSize="16sp"
+        android:textColor="@color/fadeGray"/>
+
+    <TextView
+        android:layout_width="@dimen/event_list_width"
+        android:layout_height="@dimen/event_list_height"
+        android:text=""
+        android:background="@color/white"
+        android:id="@+id/listBackground5"
+        android:layout_below="@+id/underline4"
+        android:layout_alignLeft="@+id/titleBackground2"
+        android:layout_alignStart="@+id/titleBackground2" />
+
+    <View
+        android:id="@+id/underline5"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/underline"
+        android:layout_alignBottom="@+id/listBackground5"
+        android:layout_alignLeft="@+id/listBackground5"
+        android:layout_alignStart="@+id/listBackground5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/assignment_title2"
+        android:id="@+id/assignmentTitle2"
+        android:layout_alignTop="@+id/listBackground5"
+        android:layout_alignLeft="@+id/listBackground5"
+        android:layout_alignStart="@+id/listBackground5"
+        android:layout_marginTop="@dimen/event_list_top_margin"
+        android:layout_marginLeft="@dimen/event_list_left_margin"
+        android:layout_marginStart="@dimen/event_list_left_margin"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_time2"
+        android:id="@+id/eventTime5"
+        android:layout_below="@+id/underline4"
+        android:layout_alignRight="@+id/listBackground2"
+        android:layout_alignEnd="@+id/listBackground2"
+        android:layout_marginTop="@dimen/event_list_top_margin"
+        android:layout_marginEnd="@dimen/event_list_left_margin"
+        android:layout_marginRight="@dimen/event_list_left_margin"
+        android:textSize="16sp"
+        android:textColor="@color/fadeGray"/>
 </RelativeLayout>
