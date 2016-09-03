@@ -24,4 +24,16 @@
     <string name="assignment_title2">Mid Semester Deliverables</string>
     <string name="assignment_title3">Persona Interaction Design</string>
 
+    <string name="view_more">View more   >></string>
+
+    <string name="search">Search</string>
+    <string name="recent_events">Recent Events</string>
+    <string name="searchimage_description">Search bar image</string>
+    <string name="date1">5 Sep 2016</string>
+    <string name="date2">12 Sep 2016</string>
+    <string name="location1">UTS Underground</string>
+    <string name="location2">UTS Library</string>
+
+    <string name="image_description1">Event image 1</string>
+    <string name="image_description2">Event image 2</string>
 </resources>

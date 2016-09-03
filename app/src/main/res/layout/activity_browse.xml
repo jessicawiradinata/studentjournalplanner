@@ -6,6 +6,58 @@
     tools:context="com.example.jessica.studentjournalplanner.BrowseActivity">
 
     <TextView
+        android:layout_width="320dp"
+        android:layout_height="170dp"
+        android:text=""
+        android:background="@color/white"
+        android:id="@+id/listBackground9"
+        android:layout_below="@+id/listBackground8"
+        android:layout_alignLeft="@+id/recentEvents"
+        android:layout_alignStart="@+id/recentEvents"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventImage2"
+        android:src="@drawable/eventimage2"
+        android:layout_alignTop="@+id/listBackground9"
+        android:layout_alignLeft="@+id/listBackground9"
+        android:layout_alignStart="@+id/listBackground9"
+        android:contentDescription="@string/image_description1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_title1"
+        android:id="@+id/title2"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/eventImage2"
+        android:layout_alignLeft="@+id/listBackground9"
+        android:layout_alignStart="@+id/listBackground9" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date2"
+        android:id="@+id/date2"
+        android:textSize="14sp"
+        android:layout_below="@+id/title2"
+        android:layout_alignLeft="@+id/listBackground9"
+        android:layout_alignStart="@+id/listBackground9" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location2"
+        android:id="@+id/location2"
+        android:textSize="14sp"
+        android:layout_below="@+id/date2"
+        android:layout_alignLeft="@+id/listBackground9"
+        android:layout_alignStart="@+id/listBackground9" />
+
+    <TextView
         android:layout_width="450dp"
         android:layout_height="60dp"
         android:text=""
@@ -75,5 +127,97 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="5dp"
         android:contentDescription="@string/journal_description"/>
+
+    <EditText
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchTxt"
+        android:hint="@string/search"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/searchImage"
+        android:layout_toEndOf="@+id/searchImage"
+        android:layout_marginTop="8dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchImage"
+        android:src="@drawable/ic_search_black_24dp1"
+        android:tint="@color/gray"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:contentDescription="@string/searchimage_description"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recent_events"
+        android:id="@+id/recentEvents"
+        android:layout_below="@+id/searchTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="170dp"
+        android:text=""
+        android:background="@color/white"
+        android:id="@+id/listBackground8"
+        android:layout_below="@+id/recentEvents"
+        android:layout_alignLeft="@+id/recentEvents"
+        android:layout_alignStart="@+id/recentEvents"
+        android:layout_marginTop="12dp"/>
+
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventImage1"
+        android:src="@drawable/eventimage"
+        android:layout_alignTop="@+id/listBackground8"
+        android:layout_alignLeft="@+id/listBackground8"
+        android:layout_alignStart="@+id/listBackground8"
+        android:contentDescription="@string/image_description2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_title3"
+        android:id="@+id/title1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/eventImage1"
+        android:layout_alignLeft="@+id/listBackground8"
+        android:layout_alignStart="@+id/listBackground8" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date1"
+        android:id="@+id/date1"
+        android:textSize="14sp"
+        android:layout_below="@+id/title1"
+        android:layout_alignLeft="@+id/listBackground8"
+        android:layout_alignStart="@+id/listBackground8" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location1"
+        android:id="@+id/location1"
+        android:textSize="14sp"
+        android:layout_below="@+id/date1"
+        android:layout_alignLeft="@+id/listBackground8"
+        android:layout_alignStart="@+id/listBackground8" />
+
+
 
 </RelativeLayout>

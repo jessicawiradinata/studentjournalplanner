@@ -1,10 +1,12 @@
 package com.example.jessica.studentjournalplanner;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,5 +25,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, HomeActivity.class));
             }
         });
+    }
+
+    public void onButtonClick(View v){
+        EditText et = (EditText)findViewById(R.id.studentId);
+        et.setTextColor(Color.rgb(255, 255, 255));
     }
 }

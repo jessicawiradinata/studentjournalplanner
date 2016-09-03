@@ -8,5 +8,7 @@
     <color name="darkBlue">#29417F</color>
     <color name="titleBlue">#97ACE2</color>
     <color name="fadeGray">#BEBEBE</color>
+    <color name="gray">#7F7F7F</color>
     <color name="underline">#9A9A9A</color>
+    <color name="black">#000000</color>
 </resources>

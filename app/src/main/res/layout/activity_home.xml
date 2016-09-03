@@ -219,6 +219,7 @@
         android:layout_marginStart="@dimen/event_list_left_margin"
         android:textSize="16sp" />
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -234,12 +235,36 @@
         android:textColor="@color/fadeGray"/>
 
     <TextView
+        android:layout_width="@dimen/event_list_width"
+        android:layout_height="@dimen/view_more_height"
+        android:text=""
+        android:background="@color/white"
+        android:id="@+id/listBackground7"
+        android:layout_below="@+id/underline3"
+        android:layout_alignLeft="@+id/underline1"
+        android:layout_alignStart="@+id/underline1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_more"
+        android:id="@+id/viewMore1"
+        android:layout_alignTop="@+id/underline3"
+        android:layout_alignLeft="@+id/listBackground3"
+        android:layout_alignStart="@+id/listBackground3"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="@dimen/event_list_left_margin"
+        android:layout_marginStart="@dimen/event_list_left_margin"
+        android:textSize="16sp"
+        android:textColor="@color/lightBlue"/>
+
+    <TextView
         android:layout_width="450dp"
         android:layout_height="60dp"
         android:text=""
         android:background="@color/titleBlue"
         android:id="@+id/titleBackground2"
-        android:layout_below="@+id/underline3"
+        android:layout_below="@+id/listBackground7"
         android:layout_alignLeft="@+id/underline3"
         android:layout_alignStart="@+id/underline3" />
 
@@ -345,4 +370,28 @@
         android:layout_marginRight="@dimen/event_list_left_margin"
         android:textSize="16sp"
         android:textColor="@color/fadeGray"/>
+
+    <TextView
+        android:layout_width="@dimen/event_list_width"
+        android:layout_height="@dimen/view_more_height"
+        android:text=""
+        android:background="@color/white"
+        android:id="@+id/listBackground8"
+        android:layout_below="@+id/underline5"
+        android:layout_alignLeft="@+id/underline1"
+        android:layout_alignStart="@+id/underline1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_more"
+        android:id="@+id/viewMore2"
+        android:layout_alignTop="@+id/underline5"
+        android:layout_alignLeft="@+id/listBackground3"
+        android:layout_alignStart="@+id/listBackground3"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="@dimen/event_list_left_margin"
+        android:layout_marginStart="@dimen/event_list_left_margin"
+        android:textSize="16sp"
+        android:textColor="@color/lightBlue"/>
 </RelativeLayout>
