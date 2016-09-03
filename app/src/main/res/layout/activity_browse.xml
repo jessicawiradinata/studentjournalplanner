@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jessica.studentjournalplanner.BrowseActivity">
+    tools:context="com.example.jessica.studentjournalplanner.BrowseActivity"
+    android:background="@color/background">
 
     <TextView
         android:layout_width="320dp"
@@ -35,7 +36,11 @@
         android:textStyle="bold"
         android:layout_below="@+id/eventImage2"
         android:layout_alignLeft="@+id/listBackground9"
-        android:layout_alignStart="@+id/listBackground9" />
+        android:layout_alignStart="@+id/listBackground9"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +50,11 @@
         android:textSize="14sp"
         android:layout_below="@+id/title2"
         android:layout_alignLeft="@+id/listBackground9"
-        android:layout_alignStart="@+id/listBackground9" />
+        android:layout_alignStart="@+id/listBackground9"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,7 +64,11 @@
         android:textSize="14sp"
         android:layout_below="@+id/date2"
         android:layout_alignLeft="@+id/listBackground9"
-        android:layout_alignStart="@+id/listBackground9" />
+        android:layout_alignStart="@+id/listBackground9"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"/>
 
     <TextView
         android:layout_width="450dp"
@@ -196,7 +209,11 @@
         android:textStyle="bold"
         android:layout_below="@+id/eventImage1"
         android:layout_alignLeft="@+id/listBackground8"
-        android:layout_alignStart="@+id/listBackground8" />
+        android:layout_alignStart="@+id/listBackground8"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -206,7 +223,11 @@
         android:textSize="14sp"
         android:layout_below="@+id/title1"
         android:layout_alignLeft="@+id/listBackground8"
-        android:layout_alignStart="@+id/listBackground8" />
+        android:layout_alignStart="@+id/listBackground8"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -216,7 +237,11 @@
         android:textSize="14sp"
         android:layout_below="@+id/date1"
         android:layout_alignLeft="@+id/listBackground8"
-        android:layout_alignStart="@+id/listBackground8" />
+        android:layout_alignStart="@+id/listBackground8"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"/>
 
 
 

@@ -11,4 +11,6 @@
     <color name="gray">#7F7F7F</color>
     <color name="underline">#9A9A9A</color>
     <color name="black">#000000</color>
+    <color name="transparent">#DFFFFFFF</color>
+    <color name="background">#E9E9E9</color>
 </resources>
