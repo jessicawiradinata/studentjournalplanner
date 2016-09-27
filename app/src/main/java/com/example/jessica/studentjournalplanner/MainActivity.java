@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                startSignIn();
             }
         });
 
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick(View v){
-        EditText et = (EditText)findViewById(R.id.studentId);
+        EditText et = (EditText)findViewById(R.id.emailField);
         et.setTextColor(Color.rgb(255, 255, 255));
     }
 }

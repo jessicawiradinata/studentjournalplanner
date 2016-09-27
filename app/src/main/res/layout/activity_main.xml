@@ -10,7 +10,7 @@
     tools:context="com.example.jessica.studentjournalplanner.MainActivity"
     android:rowCount="3"
     android:columnCount="1"
-    android:background="@drawable/background">
+    android:background="@drawable/background2">
 
     <EditText
         android:layout_width="270dp"
