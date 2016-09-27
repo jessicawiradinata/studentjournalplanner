@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "138840172602",
+    "firebase_url": "https://journalplanner-25d71.firebaseio.com",
+    "project_id": "journalplanner-25d71",
+    "storage_bucket": "journalplanner-25d71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138840172602:android:146c897fe415d331",
+        "android_client_info": {
+          "package_name": "com.example.jessica.studentjournalplanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138840172602-217akvc215d1e762lj1821tlg1ne4ve8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYkrXtduX7cd6Evoga1K8vXKb2Fj4hQOU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
