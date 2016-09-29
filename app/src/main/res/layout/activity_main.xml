@@ -15,8 +15,8 @@
     <EditText
         android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="@string/student_id"
+        android:inputType="textPersonName"
+        android:hint="Email Address"
         android:ems="10"
         android:id="@+id/emailField"
         android:layout_marginTop="118dp"

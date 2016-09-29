@@ -16,8 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity
+{
     private EditText emailField;
     private EditText password;
     private Button loginButton;
@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setupLoginButton();
     }
 
-    private void setupLoginButton(){
+    private void setupLoginButton()
+    {
         loginButton = (Button) findViewById(R.id.loginButton);
         emailField = (EditText) findViewById(R.id.emailField);
         password = (EditText) findViewById(R.id.password);
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
@@ -63,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         String email = emailField.getText().toString();
         String passwords = password.getText().toString();
 
-        if(TextUtils.isEmpty(email) || TextUtils.isEmpty(passwords)) {
-            Toast.makeText(MainActivity.this, "Please enter ID or password", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(passwords)) {
+            Toast.makeText(MainActivity.this, "Please enter email or password", Toast.LENGTH_SHORT).show();
         }
         else {
             mAuth.signInWithEmailAndPassword(email, passwords).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -82,8 +83,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onButtonClick(View v){
-        EditText et = (EditText)findViewById(R.id.emailField);
-        et.setTextColor(Color.rgb(255, 255, 255));
-    }
 }

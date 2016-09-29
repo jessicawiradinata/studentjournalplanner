@@ -13,4 +13,5 @@
     <color name="black">#000000</color>
     <color name="transparent">#DFFFFFFF</color>
     <color name="background">#E9E9E9</color>
+    <color name="red">#D83636</color>
 </resources>
