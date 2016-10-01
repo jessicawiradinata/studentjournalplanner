@@ -29,11 +29,18 @@
         </activity>
         <activity android:name=".EventDetailActivity" />
         <activity android:name=".ViewEventActivity" />
-        <activity android:name=".CreateAssignmentActivity" />
+        <activity android:name=".CreateAssignmentActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".MyAssignmentActivity" />
         <activity android:name=".AssignmentHistoryActivity" />
         <activity android:name=".AssignmentDetailActivity" />
-        <activity android:name=".EventHistoryActivity"></activity>
+        <activity android:name=".EventHistoryActivity" />
+        <activity android:name=".MyJournalActivity"></activity>
     </application>
 
 </manifest>

@@ -3,63 +3,118 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Upcoming Events"
-        android:background="@color/titleBlue"
-        android:id="@+id/upcomingEvents"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        />
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#5066E5"
+        android:orientation="vertical"
+        >
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="165dp"
-        android:id="@+id/scrollView1" >
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/myEvent_recyclerView"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="165dp"
-            android:layout_marginBottom="0dp"
-            >
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center_horizontal"
+            android:textSize="16sp"
+            android:paddingTop="40dp"
+            android:textColor="@color/white"
+            android:id="@+id/username"
+            android:textStyle="bold"/>
 
-        </android.support.v7.widget.RecyclerView>
-
-    </ScrollView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Upcoming Assignments"
-        android:background="@color/titleBlue"
-        android:id="@+id/upcomingAssignments"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="165dp"
-        android:id="@+id/scrollView2" >
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/myEvent_recyclerView2"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_marginBottom="0dp"
-            >
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center_horizontal"
+            android:textSize="16sp"
+            android:paddingTop="5dp"
+            android:textColor="@color/white"
+            android:id="@+id/email" />
 
-        </android.support.v7.widget.RecyclerView>
 
-    </ScrollView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:weightSum="4"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:weightSum="1"
+            android:padding="15dp"
+            android:background="@drawable/border"
+            android:id="@+id/viewAss"
+            android:onClick="viewAss">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View My Assignments"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:weightSum="1"
+            android:padding="15dp"
+            android:background="@drawable/border"
+            android:id="@+id/viewEvent"
+            android:onClick="viewEvent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View My Events"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:weightSum="1"
+            android:padding="15dp"
+            android:background="@drawable/border"
+            android:id="@+id/assHistory"
+            android:onClick="assHistory">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Assignments History"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:weightSum="1"
+            android:padding="15dp"
+            android:background="@drawable/border"
+            android:id="@+id/eventHistory"
+            android:onClick="eventHistory">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Events History"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="450dp"
@@ -131,8 +186,6 @@
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="5dp"
             android:contentDescription="@string/journal_description"/>
-
-
     </RelativeLayout>
 
 </LinearLayout>

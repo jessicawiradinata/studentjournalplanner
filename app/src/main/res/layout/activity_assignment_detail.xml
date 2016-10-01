@@ -11,10 +11,15 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:paddingBottom="5dp"
+            android:text="Assignment Details"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
             />
     </LinearLayout>
 
@@ -26,7 +31,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="30dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -137,17 +142,5 @@
 
 
     </LinearLayout>
-
-
-    <Button
-        android:id="@+id/addEventBtn"
-        android:layout_width="215dp"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:background="@color/red"
-        android:text="Delete Assignment"
-        android:textColor="@color/white"
-        android:textSize="15sp" />
 
 </LinearLayout>

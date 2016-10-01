@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +26,11 @@ public class MyAssignmentActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private DatabaseReference mDatabase;
+    private ImageButton journalButton;
+    private ImageButton homeButton;
+    private ImageButton browseButton;
+    private ImageButton addButton;
+    private Button deleteButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,36 +43,8 @@ public class MyAssignmentActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String users = user.getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Assignments");
-        setupBrowseButton();
+        setupButton();
 
-    }
-
-    private void setupBrowseButton(){
-        ImageButton browseButton = (ImageButton) findViewById(R.id.browseButton);
-        ImageButton addButton = (ImageButton) findViewById(R.id.addButton);
-        ImageButton journalButton = (ImageButton) findViewById(R.id.journalButton);
-
-        browseButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                startActivity(new Intent(MyAssignmentActivity.this, BrowseActivity.class));
-            }
-        });
-
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                startActivity(new Intent(MyAssignmentActivity.this, AssignmentHistoryActivity.class));
-            }
-        });
-        journalButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                startActivity(new Intent(MyAssignmentActivity.this, AssignmentHistoryActivity.class));
-            }
-        });
     }
 
     @Override
@@ -103,6 +81,13 @@ public class MyAssignmentActivity extends AppCompatActivity {
                             startActivity(i);
                         }
                     });
+                    viewHolder.deleteBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            mDatabase.child(key).removeValue();
+                            Toast.makeText(MyAssignmentActivity.this, "Assignment Deleted", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             }
         };
@@ -129,6 +114,7 @@ public class MyAssignmentActivity extends AppCompatActivity {
     {
         View mView;
         Button viewBtn;
+        Button deleteBtn;
 
         public MyAssignmentViewHolder(View itemView)
         {
@@ -157,6 +143,7 @@ public class MyAssignmentActivity extends AppCompatActivity {
         public void setBtn()
         {
             viewBtn = (Button) mView.findViewById(R.id.viewBtn);
+            deleteBtn = (Button) mView.findViewById(R.id.deleteBtn);
         }
 
         public void deleteLayout()
@@ -165,5 +152,42 @@ public class MyAssignmentActivity extends AppCompatActivity {
             view.setVisibility(View.GONE);
         }
     }
+
+    private void setupButton(){
+        homeButton = (ImageButton) findViewById(R.id.homeButton);
+        browseButton = (ImageButton) findViewById(R.id.browseButton);
+        addButton = (ImageButton) findViewById(R.id.addButton);
+        journalButton = (ImageButton) findViewById(R.id.journalButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(MyAssignmentActivity.this, HomeActivity.class));
+            }
+        });
+
+        browseButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(MyAssignmentActivity.this, BrowseActivity.class));
+            }
+        });
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(MyAssignmentActivity.this, CreateAssignmentActivity.class));
+            }
+        });
+        journalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(MyAssignmentActivity.this, MyJournalActivity.class));
+            }
+        });
+    }
+
 
 }

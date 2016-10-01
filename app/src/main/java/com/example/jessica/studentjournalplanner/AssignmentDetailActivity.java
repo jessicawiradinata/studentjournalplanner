@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -32,6 +33,7 @@ public class AssignmentDetailActivity extends AppCompatActivity {
     private DatabaseReference dataRef;
     private Firebase fRoot;
     private String link;
+    private Button deleteButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,4 +100,5 @@ public class AssignmentDetailActivity extends AppCompatActivity {
         childRef.child("Subject").setValue(subject);
         childRef.child("dueDate").setValue(date);
     }
+
 }

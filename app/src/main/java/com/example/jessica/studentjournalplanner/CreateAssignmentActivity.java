@@ -7,6 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +26,10 @@ public class CreateAssignmentActivity extends AppCompatActivity
     private EditText descField;
     private Button createBtn;
     private DatabaseReference dataRef;
+    private ImageButton journalButton;
+    private ImageButton homeButton;
+    private ImageButton browseButton;
+    private ImageButton addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,9 +52,12 @@ public class CreateAssignmentActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 createAssignment();
+                Toast.makeText(CreateAssignmentActivity.this, "Assignment added", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(CreateAssignmentActivity.this, HomeActivity.class ));
             }
         });
+
+        setupButton();
     }
 
     public void createAssignment()
@@ -62,6 +71,42 @@ public class CreateAssignmentActivity extends AppCompatActivity
         newSession.child("Subject").setValue(subject);
         newSession.child("Description").setValue(desc);
         newSession.child("dueDate").setValue(due);
+    }
+
+    private void setupButton(){
+        homeButton = (ImageButton) findViewById(R.id.homeButton);
+        browseButton = (ImageButton) findViewById(R.id.browseButton);
+        addButton = (ImageButton) findViewById(R.id.addButton);
+        journalButton = (ImageButton) findViewById(R.id.journalButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(CreateAssignmentActivity.this, HomeActivity.class));
+            }
+        });
+
+        browseButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(CreateAssignmentActivity.this, BrowseActivity.class));
+            }
+        });
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(CreateAssignmentActivity.this, CreateAssignmentActivity.class));
+            }
+        });
+        journalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(CreateAssignmentActivity.this, MyJournalActivity.class));
+            }
+        });
     }
 
 }

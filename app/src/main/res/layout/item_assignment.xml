@@ -70,6 +70,21 @@
             android:background="#6D9FC7"
             android:text="View Details"
             android:textColor="@color/white"
+            android:layout_marginRight="25dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginTop="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/title2"/>
+
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textSize="9dp"
+            android:background="@color/red"
+            android:text="Delete"
+            android:textColor="@color/white"
             android:layout_marginRight="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="18dp"

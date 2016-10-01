@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -30,11 +31,11 @@ public class EventDetailActivity extends AppCompatActivity {
     private EditText dateField;
     private EditText timeField;
     private Button addEventBtn;
-    private DatabaseReference dataRef;
     private Firebase fRoot;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private String link;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,9 @@ public class EventDetailActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         link = bundle.getString("stuff");
         fRoot = new Firebase("https://journalplanner-25d71.firebaseio.com/Events/"+link);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String users = user.getUid();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Events");
         mAuth = FirebaseAuth.getInstance();
         fRoot.addValueEventListener(new ValueEventListener() {
             @Override
@@ -57,34 +61,29 @@ public class EventDetailActivity extends AppCompatActivity {
             }
 
         });
-        mAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener()
-        {
+        addEventBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth)
+            public void onClick(View v)
             {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null)
-                {
-                    dataRef = FirebaseDatabase.getInstance().getReference().child("Users").child(user.getUid()).child("Events");
-                    addEventBtn.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v)
-                        {
-                            submitData();
-                        }
-                    });
-
-                }
+                submitData();
+                Toast.makeText(EventDetailActivity.this, "Event Added", Toast.LENGTH_SHORT).show();
             }
-        };
+        });
 
+        setCancelVisibility();
+        /*if (mDatabase == null)
+        {
+            setCancelVisibility();
+        }
+        else
+        {
+            setAddVisibility();
+        }*/
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
     }
 
     public void setReference() {
@@ -122,11 +121,23 @@ public class EventDetailActivity extends AppCompatActivity {
         String time = timeField.getText().toString();
         String name = nameField.getText().toString();
         String desc = descField.getText().toString();
-        DatabaseReference childRef = dataRef.child(link);
+        DatabaseReference childRef = mDatabase.child(link);
         childRef.child("Name").setValue(name);
         childRef.child("Description").setValue(desc);
         childRef.child("Location").setValue(location);
         childRef.child("Date").setValue(date);
         childRef.child("Time").setValue(time);
+    }
+
+    public void setCancelVisibility()
+    {
+        Button cancelButton = (Button) findViewById(R.id.cancelEventBtn);
+        cancelButton.setVisibility(View.GONE);
+    }
+
+    public void setAddVisibility()
+    {
+        Button addButton = (Button) findViewById(R.id.addEventBtn);
+        addButton.setVisibility(View.GONE);
     }
 }

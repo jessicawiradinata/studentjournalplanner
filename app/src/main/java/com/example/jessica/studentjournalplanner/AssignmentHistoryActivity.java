@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -25,6 +26,10 @@ public class AssignmentHistoryActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private DatabaseReference mDatabase;
+    private ImageButton journalButton;
+    private ImageButton homeButton;
+    private ImageButton browseButton;
+    private ImageButton addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +134,42 @@ public class AssignmentHistoryActivity extends AppCompatActivity {
             view.setVisibility(View.GONE);
         }
 
+    }
+
+    private void setupButton(){
+        homeButton = (ImageButton) findViewById(R.id.homeButton);
+        browseButton = (ImageButton) findViewById(R.id.browseButton);
+        addButton = (ImageButton) findViewById(R.id.addButton);
+        journalButton = (ImageButton) findViewById(R.id.journalButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(AssignmentHistoryActivity.this, HomeActivity.class));
+            }
+        });
+
+        browseButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(AssignmentHistoryActivity.this, BrowseActivity.class));
+            }
+        });
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(AssignmentHistoryActivity.this, CreateAssignmentActivity.class));
+            }
+        });
+        journalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(AssignmentHistoryActivity.this, MyJournalActivity.class));
+            }
+        });
     }
 
 }

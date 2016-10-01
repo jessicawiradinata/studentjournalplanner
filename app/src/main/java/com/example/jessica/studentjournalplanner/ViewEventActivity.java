@@ -29,6 +29,10 @@ public class ViewEventActivity extends AppCompatActivity
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private DatabaseReference mDatabase;
+    private ImageButton journalButton;
+    private ImageButton homeButton;
+    private ImageButton browseButton;
+    private ImageButton addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -42,7 +46,7 @@ public class ViewEventActivity extends AppCompatActivity
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String users = user.getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Events");
-        setupBrowseButton();
+        setupButton();
     }
 
     @Override
@@ -83,34 +87,6 @@ public class ViewEventActivity extends AppCompatActivity
             }
         };
         mRecyclerView.setAdapter(firebaseRecyclerAdapter);
-    }
-
-    private void setupBrowseButton(){
-        ImageButton browseButton = (ImageButton) findViewById(R.id.browseButton);
-        ImageButton addButton = (ImageButton) findViewById(R.id.addButton);
-        ImageButton journalButton = (ImageButton) findViewById(R.id.journalButton);
-
-        browseButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                startActivity(new Intent(ViewEventActivity.this, BrowseActivity.class));
-            }
-        });
-
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                startActivity(new Intent(ViewEventActivity.this, EventHistoryActivity.class));
-            }
-        });
-        journalButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                startActivity(new Intent(ViewEventActivity.this, EventHistoryActivity.class));
-            }
-        });
     }
 
     private boolean checkDate(String date)
@@ -169,6 +145,42 @@ public class ViewEventActivity extends AppCompatActivity
             view.setVisibility(View.GONE);
         }
 
+    }
+
+    private void setupButton(){
+        homeButton = (ImageButton) findViewById(R.id.homeButton);
+        browseButton = (ImageButton) findViewById(R.id.browseButton);
+        addButton = (ImageButton) findViewById(R.id.addButton);
+        journalButton = (ImageButton) findViewById(R.id.journalButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(ViewEventActivity.this, HomeActivity.class));
+            }
+        });
+
+        browseButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(ViewEventActivity.this, BrowseActivity.class));
+            }
+        });
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(ViewEventActivity.this, CreateAssignmentActivity.class));
+            }
+        });
+        journalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(ViewEventActivity.this, MyJournalActivity.class));
+            }
+        });
     }
 
 }
