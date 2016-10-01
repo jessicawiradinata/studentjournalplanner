@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
@@ -36,6 +37,10 @@ public class EventDetailActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private String link;
     private DatabaseReference mDatabase;
+    private ImageButton journalButton;
+    private ImageButton homeButton;
+    private ImageButton browseButton;
+    private ImageButton addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +75,9 @@ public class EventDetailActivity extends AppCompatActivity {
             }
         });
 
-        setCancelVisibility();
+        setupButton();
+
+        //setCancelVisibility();
         /*if (mDatabase == null)
         {
             setCancelVisibility();
@@ -129,15 +136,51 @@ public class EventDetailActivity extends AppCompatActivity {
         childRef.child("Time").setValue(time);
     }
 
-    public void setCancelVisibility()
+    /*public void setCancelVisibility()
     {
         Button cancelButton = (Button) findViewById(R.id.cancelEventBtn);
         cancelButton.setVisibility(View.GONE);
-    }
+    }*/
 
     public void setAddVisibility()
     {
         Button addButton = (Button) findViewById(R.id.addEventBtn);
         addButton.setVisibility(View.GONE);
+    }
+
+    private void setupButton(){
+        homeButton = (ImageButton) findViewById(R.id.homeButton);
+        browseButton = (ImageButton) findViewById(R.id.browseButton);
+        addButton = (ImageButton) findViewById(R.id.addButton);
+        journalButton = (ImageButton) findViewById(R.id.journalButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(EventDetailActivity.this, HomeActivity.class));
+            }
+        });
+
+        browseButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(EventDetailActivity.this, BrowseActivity.class));
+            }
+        });
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(EventDetailActivity.this, CreateAssignmentActivity.class));
+            }
+        });
+        journalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(EventDetailActivity.this, MyJournalActivity.class));
+            }
+        });
     }
 }

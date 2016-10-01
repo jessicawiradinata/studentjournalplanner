@@ -23,15 +23,19 @@
             />
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/scrollView1"
+        android:layout_marginTop="20dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -56,8 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -83,8 +86,7 @@
                 android:layout_weight="1"
 
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -109,8 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -136,8 +137,7 @@
                 android:layout_weight="1"
 
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -163,11 +163,11 @@
                 android:layout_weight="1"
 
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 
 
 
@@ -177,21 +177,87 @@
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:background="@color/lightBlue"
         android:text="Add Event"
         android:textColor="@color/white"
         android:textSize="15sp" />
 
-    <Button
-        android:id="@+id/cancelEventBtn"
-        android:layout_width="215dp"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/red"
-        android:text="Cancel Event"
-        android:textColor="@color/white"
-        android:textSize="15sp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="450dp"
+            android:layout_height="60dp"
+            android:text=""
+            android:background="@color/darkBlue"
+            android:id="@+id/toolbar"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/browseButton"
+            android:tint="@color/white"
+            android:src="@drawable/ic_search_black_24dp"
+            android:background="@null"
+            android:contentDescription="@string/search_description"
+            android:layout_alignBottom="@+id/toolbar"
+            android:layout_toRightOf="@+id/homeButton"
+            android:layout_toEndOf="@+id/homeButton"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="5dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/homeButton"
+            android:src="@drawable/ic_store_black_24dp"
+            android:background="@null"
+            android:tint="@color/white"
+            android:contentDescription="@string/home_description"
+            android:layout_alignBottom="@+id/toolbar"
+            android:layout_alignLeft="@+id/toolbar"
+            android:layout_alignStart="@+id/toolbar"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="5dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addButton"
+            android:src="@drawable/ic_playlist_add_black_24dp"
+            android:tint="@color/white"
+            android:background="@null"
+            android:layout_alignBottom="@+id/toolbar"
+            android:layout_toRightOf="@+id/browseButton"
+            android:layout_toEndOf="@+id/browseButton"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="@string/add_description"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/journalButton"
+            android:src="@drawable/ic_book_black_24dp"
+            android:tint="@color/white"
+            android:background="@null"
+            android:layout_alignBottom="@+id/toolbar"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="@string/journal_description"/>
+
+
+    </RelativeLayout>
 </LinearLayout>

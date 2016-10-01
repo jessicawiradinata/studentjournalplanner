@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void startSignIn() {
-        String email = emailField.getText().toString();
+        String email = emailField.getText().toString() + "@uts.edu.au";
         String passwords = password.getText().toString();
 
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(passwords)) {

@@ -75,7 +75,7 @@ public class HomeActivity extends AppCompatActivity {
                     viewHolder.setName(model.getName());
                     viewHolder.setBtn();
                     final String key = getRef(position).getKey();
-                    /* viewHolder.viewBtn.setOnClickListener(new View.OnClickListener() {
+                    viewHolder.viewList.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent i = new Intent(HomeActivity.this, AssignmentDetailActivity.class);
@@ -84,21 +84,21 @@ public class HomeActivity extends AppCompatActivity {
                             i.putExtras(bundle);
                             startActivity(i);
                         }
-                    }); */
+                    });
                 }
             }
         };
         mRecyclerView.setAdapter(firebaseRecyclerAdapter);
 
-        FirebaseRecyclerAdapter<Event,ViewEventActivity.MyEventViewHolder> firebaseRecyclerAdapter2 = new FirebaseRecyclerAdapter<Event, ViewEventActivity.MyEventViewHolder>(
+        FirebaseRecyclerAdapter<Event,MyEventViewHolder> firebaseRecyclerAdapter2 = new FirebaseRecyclerAdapter<Event, MyEventViewHolder>(
                 Event.class,
                 R.layout.item_event_home,
-                ViewEventActivity.MyEventViewHolder.class,
+                MyEventViewHolder.class,
                 mDatabase2
         )
         {
             @Override
-            protected void populateViewHolder(ViewEventActivity.MyEventViewHolder viewHolder, Event model, int position) {
+            protected void populateViewHolder(MyEventViewHolder viewHolder, Event model, int position) {
                 boolean check = checkDate(model.getDate());
                 if (check){
                     viewHolder.deleteLayout();
@@ -108,17 +108,17 @@ public class HomeActivity extends AppCompatActivity {
                     viewHolder.setName(model.getName());
                     viewHolder.setBtn();
                     final String key = getRef(position).getKey();
-                    /* viewHolder.viewBtn.setOnClickListener(new View.OnClickListener()
+                    viewHolder.viewList.setOnClickListener(new View.OnClickListener()
                     {
                         @Override
                         public void onClick(View v) {
-                            Intent i = new Intent(ViewEventActivity.this, EventDetailActivity.class);
+                            Intent i = new Intent(HomeActivity.this, EventDetailActivity.class);
                             Bundle bundle = new Bundle();
                             bundle.putString("stuff", key);
                             i.putExtras(bundle);
                             startActivity(i);
                         }
-                    }); */
+                    });
                 }
             }
         };
@@ -145,6 +145,7 @@ public class HomeActivity extends AppCompatActivity {
     {
         View mView;
         Button viewBtn;
+        View viewList;
 
         public MyAssignmentViewHolder(View itemView)
         {
@@ -166,7 +167,7 @@ public class HomeActivity extends AppCompatActivity {
 
         public void setBtn()
         {
-            View viewList = mView.findViewById(R.id.viewList);
+            viewList = mView.findViewById(R.id.viewList);
         }
 
         public void deleteLayout()
@@ -174,6 +175,49 @@ public class HomeActivity extends AppCompatActivity {
             View view = mView.findViewById(R.id.list_layout);
             view.setVisibility(View.GONE);
         }
+    }
+
+    public static class MyEventViewHolder extends RecyclerView.ViewHolder
+    {
+        View mView;
+        Button viewBtn;
+        View viewList;
+
+        public MyEventViewHolder(View itemView)
+        {
+            super(itemView);
+            mView = itemView;
+        }
+
+        public void setDate(String date)
+        {
+            TextView eventDate = (TextView) mView.findViewById(R.id.date2);
+            eventDate.setText(date);
+        }
+
+        public void setName(String name)
+        {
+            TextView eventTitle = (TextView) mView.findViewById(R.id.title2);
+            eventTitle.setText(name);
+        }
+
+        public void setLocation(String location)
+        {
+            TextView eventLocation = (TextView) mView.findViewById(R.id.location2);
+            eventLocation.setText(location);
+        }
+
+        public void setBtn()
+        {
+            viewList = mView.findViewById(R.id.viewList);;
+        }
+
+        public void deleteLayout()
+        {
+            View view = mView.findViewById(R.id.list_layout);
+            view.setVisibility(View.GONE);
+        }
+
     }
 
     private void setupButton(){

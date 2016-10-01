@@ -54,10 +54,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/dueDateField"
-            android:hint="Due Date"
+            android:hint="Due Date (DD/MM/YYYY)"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:inputType="date"
             android:paddingBottom="20dp"
             android:layout_marginBottom="20dp"/>
 
