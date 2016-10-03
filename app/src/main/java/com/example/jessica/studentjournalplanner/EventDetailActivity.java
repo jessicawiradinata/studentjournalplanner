@@ -1,8 +1,10 @@
 package com.example.jessica.studentjournalplanner;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -68,10 +70,26 @@ public class EventDetailActivity extends AppCompatActivity {
         });
         addEventBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                submitData();
-                Toast.makeText(EventDetailActivity.this, "Event Added", Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(EventDetailActivity.this);
+                alertDialog.setTitle("Do you want to add event to your list?");
+                alertDialog.setCancelable(true);
+                alertDialog.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                alertDialog.setNegativeButton("Confirm", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        submitData();
+                        Toast.makeText(EventDetailActivity.this, "Event Added", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EventDetailActivity.this, HomeActivity.class ));
+                    }
+                });
+                alertDialog.create();
+                alertDialog.show();
             }
         });
 

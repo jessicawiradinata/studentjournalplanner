@@ -1,7 +1,9 @@
 package com.example.jessica.studentjournalplanner;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -49,12 +51,28 @@ public class CreateAssignmentActivity extends AppCompatActivity
         createBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v)
-            {
-                createAssignment();
-                Toast.makeText(CreateAssignmentActivity.this, "Assignment added", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(CreateAssignmentActivity.this, HomeActivity.class ));
+            public void onClick(View view) {
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(CreateAssignmentActivity.this);
+                alertDialog.setTitle("Do you want to add assignment to your list?");
+                alertDialog.setCancelable(true);
+                alertDialog.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                alertDialog.setNegativeButton("Confirm", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        createAssignment();
+                        Toast.makeText(CreateAssignmentActivity.this, "Assignment added", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(CreateAssignmentActivity.this, HomeActivity.class ));
+                    }
+                });
+                alertDialog.create();
+                alertDialog.show();
             }
+
         });
 
         setupButton();
