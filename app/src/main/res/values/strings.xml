@@ -9,8 +9,10 @@
     <string name="add_description">Navigate to Add</string>
     <string name="journal_description">Navigate to My Journal</string>
 
-    <string name="upcoming_events">Upcoming events</string>
+    <string name="upcoming_events">Upcoming Events</string>
     <string name="upcoming_assignments">Upcoming Assignments</string>
+
+    <string name="browse">Browse Events</string>
 
     <string name="event_title1">LinkedIn Lab</string>
     <string name="event_title2">Network Cafe</string>

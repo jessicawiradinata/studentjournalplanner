@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -37,19 +36,18 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mRecyclerView = (RecyclerView) findViewById(R.id.myEvent_recyclerView2);
-        mRecyclerView.setHasFixedSize(true);
+        //mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String users = user.getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Assignments");
-        setupButton();
         mDatabase2 = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Events");
         mRecyclerView2 = (RecyclerView) findViewById(R.id.myEvent_recyclerView);
         mRecyclerView2.setHasFixedSize(true);
         mLayoutManager2 = new LinearLayoutManager(this);
         mRecyclerView2.setLayoutManager(mLayoutManager2);
-
+        setupButton();
     }
 
     @Override
@@ -144,7 +142,6 @@ public class HomeActivity extends AppCompatActivity {
     public static class MyAssignmentViewHolder extends RecyclerView.ViewHolder
     {
         View mView;
-        Button viewBtn;
         View viewList;
 
         public MyAssignmentViewHolder(View itemView)
@@ -180,7 +177,6 @@ public class HomeActivity extends AppCompatActivity {
     public static class MyEventViewHolder extends RecyclerView.ViewHolder
     {
         View mView;
-        Button viewBtn;
         View viewList;
 
         public MyEventViewHolder(View itemView)
@@ -199,12 +195,6 @@ public class HomeActivity extends AppCompatActivity {
         {
             TextView eventTitle = (TextView) mView.findViewById(R.id.title2);
             eventTitle.setText(name);
-        }
-
-        public void setLocation(String location)
-        {
-            TextView eventLocation = (TextView) mView.findViewById(R.id.location2);
-            eventLocation.setText(location);
         }
 
         public void setBtn()

@@ -36,11 +36,12 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
-        <activity android:name=".MyAssignmentActivity" />
+        <activity android:name=".MyAssignmentActivity"
+            android:label="My Assignments"/>
         <activity android:name=".AssignmentHistoryActivity" />
         <activity android:name=".AssignmentDetailActivity" />
         <activity android:name=".EventHistoryActivity" />
-        <activity android:name=".MyJournalActivity"></activity>
+        <activity android:name=".MyJournalActivity"/>
     </application>
 
 </manifest>

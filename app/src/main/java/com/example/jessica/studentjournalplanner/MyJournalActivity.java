@@ -2,10 +2,12 @@ package com.example.jessica.studentjournalplanner;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -27,6 +29,8 @@ public class MyJournalActivity extends AppCompatActivity
     private ImageButton homeButton;
     private ImageButton browseButton;
     private ImageButton addButton;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,16 @@ public class MyJournalActivity extends AppCompatActivity
 
         View eventHistory = findViewById(R.id.eventHistory);
 
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener()
+        {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser() == null) {
+
+                }
+            }
+        };
         final TextView username = (TextView) findViewById(R.id.username);
         final TextView email = (TextView) findViewById(R.id.email);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -65,6 +79,12 @@ public class MyJournalActivity extends AppCompatActivity
         setupButton();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
     public void viewAss(View view) {
         Intent viewAssIntent = new Intent(this, MyAssignmentActivity.class);
         startActivity(viewAssIntent);
@@ -83,6 +103,16 @@ public class MyJournalActivity extends AppCompatActivity
     public void eventHistory(View view) {
         Intent eventHistoryIntent = new Intent(this, EventHistoryActivity.class);
         startActivity(eventHistoryIntent);
+    }
+
+    public void logout(View view) {
+        startSignOut();
+        Toast.makeText(MyJournalActivity.this, "Logging out...", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MyJournalActivity.this, MainActivity.class));
+    }
+
+    private void startSignOut() {
+        mAuth.signOut();
     }
 
     private void setupButton(){

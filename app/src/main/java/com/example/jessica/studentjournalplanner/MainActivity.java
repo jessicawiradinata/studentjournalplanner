@@ -1,7 +1,6 @@
 package com.example.jessica.studentjournalplanner;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity
 {
-    private EditText emailField;
+    private EditText studentIdField;
     private EditText password;
     private Button loginButton;
     private FirebaseAuth mAuth;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity
     private void setupLoginButton()
     {
         loginButton = (Button) findViewById(R.id.loginButton);
-        emailField = (EditText) findViewById(R.id.emailField);
+        studentIdField = (EditText) findViewById(R.id.studentIdField);
         password = (EditText) findViewById(R.id.password);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                    //startActivity(new Intent(MainActivity.this, HomeActivity.class));
                 }
             }
         };
@@ -61,22 +60,23 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void startSignIn() {
-        String email = emailField.getText().toString() + "@uts.edu.au";
+        String studentId = studentIdField.getText().toString() + "@uts.edu.au";
         String passwords = password.getText().toString();
 
-        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(passwords)) {
-            Toast.makeText(MainActivity.this, "Please enter email or password", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(studentId) || TextUtils.isEmpty(passwords)) {
+            Toast.makeText(MainActivity.this, "Please enter student ID or password", Toast.LENGTH_SHORT).show();
         }
         else {
-            mAuth.signInWithEmailAndPassword(email, passwords).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(studentId, passwords).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
+                        Toast.makeText(MainActivity.this, "Log in successful", Toast.LENGTH_SHORT).show();
                         Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
                         startActivity(loginIntent);
                     }
                     else {
-                        Toast.makeText(MainActivity.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Invalid student ID or password", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

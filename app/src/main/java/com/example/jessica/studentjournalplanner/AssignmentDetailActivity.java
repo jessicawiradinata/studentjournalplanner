@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
@@ -26,10 +27,10 @@ import java.util.Map;
  * Created by timothyalfares on 9/27/2016.
  */
 public class AssignmentDetailActivity extends AppCompatActivity {
-    private EditText nameField;
-    private EditText descField;
-    private EditText subjectField;
-    private EditText dateField;
+    private TextView nameField;
+    private TextView descField;
+    private TextView subjectField;
+    private TextView dateField;
     private Button deleteAssignmentBtn;
     private DatabaseReference dataRef;
     private Firebase fRoot;
@@ -70,13 +71,13 @@ public class AssignmentDetailActivity extends AppCompatActivity {
     }
 
     public void setReference() {
-        nameField = (EditText) findViewById(R.id.nameField);
+        nameField = (TextView) findViewById(R.id.nameField);
         nameField.setEnabled(false);
-        descField = (EditText) findViewById(R.id.descField);
+        descField = (TextView) findViewById(R.id.descField);
         descField.setEnabled(false);
-        subjectField = (EditText) findViewById(R.id.subjectField);
+        subjectField = (TextView) findViewById(R.id.subjectField);
         subjectField.setEnabled(false);
-        dateField = (EditText) findViewById(R.id.dateField);
+        dateField = (TextView) findViewById(R.id.dateField);
         dateField.setEnabled(false);
         deleteAssignmentBtn = (Button) findViewById(R.id.addEventBtn);
     }

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
@@ -27,12 +28,13 @@ import java.util.Map;
 /**
  * Created by timothyalfares on 9/27/2016.
  */
-public class EventDetailActivity extends AppCompatActivity {
-    private EditText nameField;
-    private EditText descField;
-    private EditText locationField;
-    private EditText dateField;
-    private EditText timeField;
+public class EventDetailActivity extends AppCompatActivity
+{
+    private TextView nameField;
+    private TextView descField;
+    private TextView locationField;
+    private TextView dateField;
+    private TextView timeField;
     private Button addEventBtn;
     private Firebase fRoot;
     private FirebaseAuth mAuth;
@@ -112,15 +114,15 @@ public class EventDetailActivity extends AppCompatActivity {
     }
 
     public void setReference() {
-        nameField = (EditText) findViewById(R.id.nameField);
+        nameField = (TextView) findViewById(R.id.nameField);
         nameField.setEnabled(false);
-        descField = (EditText) findViewById(R.id.descField);
+        descField = (TextView) findViewById(R.id.descField);
         descField.setEnabled(false);
-        locationField = (EditText) findViewById(R.id.locationField);
+        locationField = (TextView) findViewById(R.id.locationField);
         locationField.setEnabled(false);
-        dateField = (EditText) findViewById(R.id.dateField);
+        dateField = (TextView) findViewById(R.id.dateField);
         dateField.setEnabled(false);
-        timeField = (EditText) findViewById(R.id.timeField);
+        timeField = (TextView) findViewById(R.id.timeField);
         timeField.setEnabled(false);
         addEventBtn = (Button) findViewById(R.id.addEventBtn);
     }
@@ -153,6 +155,29 @@ public class EventDetailActivity extends AppCompatActivity {
         childRef.child("Date").setValue(date);
         childRef.child("Time").setValue(time);
     }
+
+    /*private void checkAdded() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        Firebase ref = new Firebase("https://journalplanner-25d71.firebaseio.com/Users" + user.getUid() + );
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChild("contactNum")) {
+
+                }
+                else
+                {
+                    Intent registerIntent = new Intent(EventDetailActivity.this, .class);
+                    startActivity(registerIntent);
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+    }*/
 
     /*public void setCancelVisibility()
     {

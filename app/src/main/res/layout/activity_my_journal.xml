@@ -108,6 +108,22 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:weightSum="1"
+            android:padding="15dp"
+            android:background="@drawable/border"
+            android:id="@+id/logoutBtn"
+            android:onClick="logout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log out"/>
+
+        </LinearLayout>
+
 
 
     </LinearLayout>

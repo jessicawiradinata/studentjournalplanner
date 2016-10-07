@@ -44,7 +44,6 @@ public class MyAssignmentActivity extends AppCompatActivity {
         String users = user.getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Assignments");
         setupButton();
-
     }
 
     @Override

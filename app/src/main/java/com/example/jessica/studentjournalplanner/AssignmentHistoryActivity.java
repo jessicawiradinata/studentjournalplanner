@@ -42,8 +42,7 @@ public class AssignmentHistoryActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String users = user.getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Assignments");
-        boolean checkThisDate = checkDate("12/10/2015");
-        Log.v("TEST DATEEEEE", "" + checkThisDate);
+        setupButton();
     }
 
     @Override

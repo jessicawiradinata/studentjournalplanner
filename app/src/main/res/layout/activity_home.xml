@@ -6,7 +6,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Upcoming Events"
+        android:text="@string/upcoming_events"
         android:background="@color/titleBlue"
         android:id="@+id/upcomingEvents"
         android:gravity="center"
@@ -22,7 +22,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/myEvent_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="165dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
             >
 
@@ -33,7 +33,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Upcoming Assignments"
+        android:text="@string/upcoming_assignments"
         android:background="@color/titleBlue"
         android:id="@+id/upcomingAssignments"
         android:gravity="center"
@@ -49,7 +49,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/myEvent_recyclerView2"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
             >
 

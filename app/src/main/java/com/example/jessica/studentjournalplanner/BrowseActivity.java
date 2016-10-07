@@ -34,22 +34,19 @@ public class BrowseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
-        setupButton();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Events");
         mRecyclerView = (RecyclerView) findViewById(R.id.event_recyclerView);
-        mRecyclerView.setHasFixedSize(true);
+        //mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-        /*
-        });*/
+        setupButton();
     }
 
     @Override
     protected void onStart()
     {
         super.onStart();
-        FirebaseRecyclerAdapter<Event,EventViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Event, EventViewHolder>(
+        FirebaseRecyclerAdapter<Event,BrowseActivity.EventViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Event, BrowseActivity.EventViewHolder>(
                 Event.class,
                 R.layout.item_event,
                 EventViewHolder.class,
@@ -57,7 +54,8 @@ public class BrowseActivity extends AppCompatActivity {
         )
         {
             @Override
-            protected void populateViewHolder(EventViewHolder viewHolder, Event model, int position) {
+            protected void populateViewHolder(EventViewHolder viewHolder, Event model, int position)
+            {
                 boolean check = checkDate(model.getDate());
                 if (check)
                 {
