@@ -36,7 +36,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mRecyclerView = (RecyclerView) findViewById(R.id.myEvent_recyclerView2);
-        //mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -44,7 +43,6 @@ public class HomeActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Assignments");
         mDatabase2 = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Events");
         mRecyclerView2 = (RecyclerView) findViewById(R.id.myEvent_recyclerView);
-        mRecyclerView2.setHasFixedSize(true);
         mLayoutManager2 = new LinearLayoutManager(this);
         mRecyclerView2.setLayoutManager(mLayoutManager2);
         setupButton();
@@ -110,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
                     {
                         @Override
                         public void onClick(View v) {
-                            Intent i = new Intent(HomeActivity.this, EventDetailActivity.class);
+                            Intent i = new Intent(HomeActivity.this, EventDetail2Activity.class);
                             Bundle bundle = new Bundle();
                             bundle.putString("stuff", key);
                             i.putExtras(bundle);

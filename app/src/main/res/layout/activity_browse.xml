@@ -6,28 +6,15 @@
     tools:context="com.example.jessica.studentjournalplanner.BrowseActivity"
     android:background="@color/white">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/browse"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="455dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="452dp"
             android:padding="16dp"
-            android:layout_marginTop="60dp">
+            android:layout_marginTop="0dp">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/event_recyclerView"

@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/eventImage2"
-            android:src="@drawable/eventimage2"
+            android:src="@drawable/events_resize"
             android:contentDescription="@string/image_description1"
             android:paddingEnd="5dp"
             android:paddingRight="5dp"

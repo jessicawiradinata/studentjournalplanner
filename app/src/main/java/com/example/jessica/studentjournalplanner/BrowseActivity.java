@@ -36,7 +36,6 @@ public class BrowseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_browse);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Events");
         mRecyclerView = (RecyclerView) findViewById(R.id.event_recyclerView);
-        //mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         setupButton();

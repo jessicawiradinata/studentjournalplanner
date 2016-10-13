@@ -5,20 +5,10 @@
     android:background="@color/white"
     android:weightSum="1">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="449dp"
+        android:layout_height="452dp"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My Assignments"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="8dp"
-            />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/myEvent_recyclerView"
@@ -28,12 +18,12 @@
             >
 
         </android.support.v7.widget.RecyclerView>
-    </LinearLayout>
+    </ScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="0dp">
 
 
         <TextView

@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * Created by timothyalfares on 9/27/2016.
  */
-public class CreateAssignmentActivity extends AppCompatActivity
+public class CreateAssignmentActivity extends AppCompatActivity implements AssignmentManagement
 {
     private EditText dueDateField;
     private EditText subjectField;

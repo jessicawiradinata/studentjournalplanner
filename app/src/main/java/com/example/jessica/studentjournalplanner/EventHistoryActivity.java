@@ -126,6 +126,7 @@ public class EventHistoryActivity extends AppCompatActivity
         public void setBtn()
         {
             viewBtn = (Button) mView.findViewById(R.id.viewBtn);
+            viewBtn.setVisibility(View.GONE);
         }
 
         public void deleteLayout()

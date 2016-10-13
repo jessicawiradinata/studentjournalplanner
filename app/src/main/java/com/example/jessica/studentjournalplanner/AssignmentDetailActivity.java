@@ -55,7 +55,12 @@ public class AssignmentDetailActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map<String, String> map = dataSnapshot.getValue(Map.class);
-                getData(map);
+                try {
+                    getData(map);
+                }
+                catch(Exception e){
+
+                }
             }
             @Override
             public void onCancelled(FirebaseError firebaseError) {

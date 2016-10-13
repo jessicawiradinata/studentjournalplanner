@@ -37,7 +37,6 @@ public class MyAssignmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_assignment);
         mRecyclerView = (RecyclerView) findViewById(R.id.myEvent_recyclerView);
-        mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

@@ -11,7 +11,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" />
-        <activity android:name=".BrowseActivity" />
+        <activity
+            android:name=".BrowseActivity"
+            android:label="Browse Events" />
         <activity android:name=".CreateEventActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,21 +30,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EventDetailActivity" />
-        <activity android:name=".ViewEventActivity" />
-        <activity android:name=".CreateAssignmentActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name=".EventDetailActivity"
+            android:label="Event Details" />
+        <activity
+            android:name=".ViewEventActivity"
+            android:label="My Events" />
+        <activity
+            android:name=".CreateAssignmentActivity"
+            android:label="Create Assignment">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".MyAssignmentActivity"
-            android:label="My Assignments"/>
-        <activity android:name=".AssignmentHistoryActivity" />
-        <activity android:name=".AssignmentDetailActivity" />
-        <activity android:name=".EventHistoryActivity" />
-        <activity android:name=".MyJournalActivity"/>
+        <activity
+            android:name=".MyAssignmentActivity"
+            android:label="My Assignments" />
+        <activity
+            android:name=".AssignmentHistoryActivity"
+            android:label="Assignments History" />
+        <activity
+            android:name=".AssignmentDetailActivity"
+            android:label="Assignment Details" />
+        <activity
+            android:name=".EventHistoryActivity"
+            android:label="Events History" />
+        <activity
+            android:name=".MyJournalActivity"
+            android:label="My Journal" />
+        <activity android:name=".EventDetail2Activity"></activity>
     </application>
 
 </manifest>

@@ -10,15 +10,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Create Assignment"
-            android:gravity="center_horizontal"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp"
-            />
 
         <EditText
             android:layout_width="match_parent"

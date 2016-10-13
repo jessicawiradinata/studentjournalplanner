@@ -3,29 +3,15 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:text="Event Details"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            />
-    </LinearLayout>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="170dp"
+        android:src="@drawable/eventimage4"
+        android:layout_marginTop="20dp"/>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="170dp"
         android:id="@+id/scrollView1"
         android:layout_marginTop="20dp">
 
@@ -170,14 +156,13 @@
     </ScrollView>
 
 
-
     <Button
         android:id="@+id/addEventBtn"
         android:layout_width="215dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:background="@color/lightBlue"
         android:text="Add Event"
         android:textColor="@color/white"

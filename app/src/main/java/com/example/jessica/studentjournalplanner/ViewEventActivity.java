@@ -40,7 +40,6 @@ public class ViewEventActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_event);
         mRecyclerView = (RecyclerView) findViewById(R.id.myEvent_recyclerView);
-        mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -76,7 +75,7 @@ public class ViewEventActivity extends AppCompatActivity
                     {
                         @Override
                         public void onClick(View v) {
-                            Intent i = new Intent(ViewEventActivity.this, EventDetailActivity.class);
+                            Intent i = new Intent(ViewEventActivity.this, EventDetail2Activity.class);
                             Bundle bundle = new Bundle();
                             bundle.putString("stuff", key);
                             i.putExtras(bundle);

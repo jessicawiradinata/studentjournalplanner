@@ -96,6 +96,7 @@ public class AssignmentHistoryActivity extends AppCompatActivity {
     {
         View mView;
         Button viewBtn;
+        Button deleteBtn;
 
         public MyAssignmentViewHolder(View itemView)
         {
@@ -124,7 +125,9 @@ public class AssignmentHistoryActivity extends AppCompatActivity {
         public void setBtn()
         {
             viewBtn = (Button) mView.findViewById(R.id.viewBtn);
+            deleteBtn = (Button) mView.findViewById(R.id.deleteBtn);
             viewBtn.setVisibility(View.GONE);
+            deleteBtn.setVisibility(View.GONE);
         }
 
         public void deleteLayout()
