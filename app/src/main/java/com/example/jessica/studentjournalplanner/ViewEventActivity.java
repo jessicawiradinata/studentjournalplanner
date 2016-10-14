@@ -92,7 +92,7 @@ public class ViewEventActivity extends AppCompatActivity
     {
         try
         {
-            if (new SimpleDateFormat("dd/MM/yyyy").parse(date).before(new Date()))
+            if (new SimpleDateFormat("dd/MM/yyyy").parse(date).before(new Date()) || new SimpleDateFormat("dd/MM/yyyy").parse(date).equals(new Date()))
             {
                 return true;
             }

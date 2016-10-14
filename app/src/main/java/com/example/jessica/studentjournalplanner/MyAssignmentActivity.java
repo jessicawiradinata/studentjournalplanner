@@ -96,7 +96,7 @@ public class MyAssignmentActivity extends AppCompatActivity {
     {
         try
         {
-            if (new SimpleDateFormat("dd/MM/yyyy").parse(date).before(new Date()))
+            if (new SimpleDateFormat("dd/MM/yyyy").parse(date).after(new Date()))
             {
                 return true;
             }

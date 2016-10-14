@@ -1,9 +1,5 @@
 package com.example.jessica.studentjournalplanner;
 
-/**
- * Created by Jessica on 9/29/2016.
- */
-
 public class Assignment {
     private String Name;
     private String Subject;
