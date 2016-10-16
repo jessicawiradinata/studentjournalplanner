@@ -7,6 +7,7 @@
     <string name="add_description">Navigate to Add</string>
     <string name="journal_description">Navigate to My Journal</string>
     <string name="event_image_description">Event Image</string>
+    <string name="assignment_image_description">Assignment Image</string>
 
     <!--Homepage Tabs-->
     <string name="upcoming_events">Upcoming Events</string>

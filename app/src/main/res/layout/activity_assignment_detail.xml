@@ -6,8 +6,9 @@
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="170dp"
-        android:src="@drawable/eventimage4"
-        android:layout_marginTop="20dp"/>
+        android:src="@drawable/assignment_pic"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/assignment_image_description"/>
 
     <ScrollView
         android:layout_width="match_parent"
