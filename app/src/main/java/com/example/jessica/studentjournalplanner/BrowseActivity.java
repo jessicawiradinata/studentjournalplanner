@@ -22,7 +22,6 @@ import java.util.Date;
 public class BrowseActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private DatabaseReference mDatabase;
     private ImageButton journalButton;

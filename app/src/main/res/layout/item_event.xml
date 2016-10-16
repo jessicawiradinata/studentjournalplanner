@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/eventImage2"
             android:src="@drawable/events_resize"
-            android:contentDescription="@string/image_description1"
+            android:contentDescription="@string/event_image_description"
             android:paddingEnd="5dp"
             android:paddingRight="5dp"
             android:paddingLeft="5dp"
@@ -29,7 +29,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/event_title1"
+            android:text="@string/event_title"
             android:id="@+id/title2"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -44,7 +44,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/date2"
+            android:text="@string/date_title"
             android:id="@+id/date2"
             android:textSize="14sp"
             android:layout_below="@+id/title2"
@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/location2"
+            android:text="@string/location_title"
             android:id="@+id/location2"
             android:textSize="14sp"
             android:layout_below="@+id/date2"
@@ -72,16 +72,18 @@
         <Button
             android:id="@+id/viewBtn"
             android:layout_width="105dp"
-            android:layout_height="wrap_content"
-            android:textSize="14dp"
+            android:layout_height="40dp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:background="#6D9FC7"
-            android:text="View Details"
+            android:text="@string/view_details_btn"
             android:textColor="@color/white"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/title2"
-            android:layout_marginRight="15dp"/>
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"/>
 
     </RelativeLayout>
 </LinearLayout>

@@ -23,14 +23,12 @@ import java.util.Date;
 public class MyAssignmentActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private DatabaseReference mDatabase;
     private ImageButton journalButton;
     private ImageButton homeButton;
     private ImageButton browseButton;
     private ImageButton addButton;
-    private Button deleteButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +94,7 @@ public class MyAssignmentActivity extends AppCompatActivity {
     {
         try
         {
-            if (new SimpleDateFormat("dd/MM/yyyy").parse(date).after(new Date()))
+            if (new SimpleDateFormat("dd/MM/yyyy").parse(date).before(new Date()))
             {
                 return true;
             }

@@ -37,14 +37,6 @@ public class MyJournalActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_journal);
 
-        View viewAss = findViewById(R.id.viewAss);
-
-        View viewEvent= findViewById(R.id.viewEvent);
-
-        View assHistory = findViewById(R.id.assHistory);
-
-        View eventHistory = findViewById(R.id.eventHistory);
-
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener()
         {

@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Assignment Title"
+            android:text="@string/name_title"
             android:id="@+id/title2"
             android:textSize="16sp"
             android:paddingStart="10dp"
@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/date2"
+            android:text="@string/date_title"
             android:id="@+id/date2"
             android:textSize="14sp"
             android:paddingStart="10dp"

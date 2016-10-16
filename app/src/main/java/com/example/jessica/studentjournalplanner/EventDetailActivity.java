@@ -37,8 +37,6 @@ public class EventDetailActivity extends AppCompatActivity
     private TextView timeField;
     private Button addEventBtn;
     private Firebase fRoot;
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
     private String link;
     private DatabaseReference mDatabase;
     private ImageButton journalButton;
@@ -57,7 +55,6 @@ public class EventDetailActivity extends AppCompatActivity
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String users = user.getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Events");
-        mAuth = FirebaseAuth.getInstance();
         fRoot.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -96,16 +93,6 @@ public class EventDetailActivity extends AppCompatActivity
         });
 
         setupButton();
-
-        //setCancelVisibility();
-        /*if (mDatabase == null)
-        {
-            setCancelVisibility();
-        }
-        else
-        {
-            setAddVisibility();
-        }*/
     }
 
     @Override
@@ -156,40 +143,6 @@ public class EventDetailActivity extends AppCompatActivity
         childRef.child("Time").setValue(time);
     }
 
-    /*private void checkAdded() {
-        FirebaseUser user = mAuth.getCurrentUser();
-        Firebase ref = new Firebase("https://journalplanner-25d71.firebaseio.com/Users" + user.getUid() + );
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.hasChild("contactNum")) {
-
-                }
-                else
-                {
-                    Intent registerIntent = new Intent(EventDetailActivity.this, .class);
-                    startActivity(registerIntent);
-                }
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
-    }*/
-
-    /*public void setCancelVisibility()
-    {
-        Button cancelButton = (Button) findViewById(R.id.cancelEventBtn);
-        cancelButton.setVisibility(View.GONE);
-    }*/
-
-    public void setAddVisibility()
-    {
-        Button addButton = (Button) findViewById(R.id.addEventBtn);
-        addButton.setVisibility(View.GONE);
-    }
 
     private void setupButton(){
         homeButton = (ImageButton) findViewById(R.id.homeButton);

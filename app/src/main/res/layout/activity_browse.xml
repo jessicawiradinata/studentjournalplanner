@@ -8,19 +8,18 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="455dp">
+        android:layout_height="452dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="452dp"
+            android:layout_height="wrap_content"
             android:padding="16dp"
             android:layout_marginTop="0dp">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/event_recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="44dp">
+                android:layout_height="match_parent">
 
             </android.support.v7.widget.RecyclerView>
 
@@ -28,6 +27,7 @@
 
     </ScrollView>
 
+    <!--TOOLBAR-->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

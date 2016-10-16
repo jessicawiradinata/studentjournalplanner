@@ -35,12 +35,8 @@ public class EventDetail2Activity extends AppCompatActivity
     private TextView locationField;
     private TextView dateField;
     private TextView timeField;
-    private Button addEventBtn;
     private Firebase fRoot;
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
     private String link;
-    private DatabaseReference mDatabase;
     private ImageButton journalButton;
     private ImageButton homeButton;
     private ImageButton browseButton;
@@ -54,10 +50,6 @@ public class EventDetail2Activity extends AppCompatActivity
         Bundle bundle = getIntent().getExtras();
         link = bundle.getString("stuff");
         fRoot = new Firebase("https://journalplanner-25d71.firebaseio.com/Events/"+link);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String users = user.getUid();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(users).child("Events");
-        mAuth = FirebaseAuth.getInstance();
         fRoot.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -73,15 +65,6 @@ public class EventDetail2Activity extends AppCompatActivity
 
         setupButton();
 
-        //setCancelVisibility();
-        /*if (mDatabase == null)
-        {
-            setCancelVisibility();
-        }
-        else
-        {
-            setAddVisibility();
-        }*/
     }
 
     @Override
@@ -100,7 +83,6 @@ public class EventDetail2Activity extends AppCompatActivity
         dateField.setEnabled(false);
         timeField = (TextView) findViewById(R.id.timeField);
         timeField.setEnabled(false);
-        addEventBtn = (Button) findViewById(R.id.addEventBtn);
     }
 
     public void getData(Map<String, String> map)
@@ -115,56 +97,6 @@ public class EventDetail2Activity extends AppCompatActivity
         locationField.setText(location);
         dateField.setText(date);
         timeField.setText(time);
-    }
-
-    public void submitData()
-    {
-        String date = dateField.getText().toString();
-        String location = locationField.getText().toString();
-        String time = timeField.getText().toString();
-        String name = nameField.getText().toString();
-        String desc = descField.getText().toString();
-        DatabaseReference childRef = mDatabase.child(link);
-        childRef.child("Name").setValue(name);
-        childRef.child("Description").setValue(desc);
-        childRef.child("Location").setValue(location);
-        childRef.child("Date").setValue(date);
-        childRef.child("Time").setValue(time);
-    }
-
-    /*private void checkAdded() {
-        FirebaseUser user = mAuth.getCurrentUser();
-        Firebase ref = new Firebase("https://journalplanner-25d71.firebaseio.com/Users" + user.getUid() + );
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.hasChild("contactNum")) {
-
-                }
-                else
-                {
-                    Intent registerIntent = new Intent(EventDetailActivity.this, .class);
-                    startActivity(registerIntent);
-                }
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
-    }*/
-
-    /*public void setCancelVisibility()
-    {
-        Button cancelButton = (Button) findViewById(R.id.cancelEventBtn);
-        cancelButton.setVisibility(View.GONE);
-    }*/
-
-    public void setAddVisibility()
-    {
-        Button addButton = (Button) findViewById(R.id.addEventBtn);
-        addButton.setVisibility(View.GONE);
     }
 
     private void setupButton(){

@@ -1,41 +1,50 @@
 <resources>
     <string name="app_name">UTS: Student Journal Planner</string>
-    <string name="student_id">Student ID</string>
-    <string name="password">Password</string>
-    <string name="login">Login</string>
 
+    <!--Image Descriptions-->
     <string name="home_description">Navigate to Home</string>
     <string name="search_description">Navigate to Browse</string>
     <string name="add_description">Navigate to Add</string>
     <string name="journal_description">Navigate to My Journal</string>
+    <string name="event_image_description">Event Image</string>
 
+    <!--Homepage Tabs-->
     <string name="upcoming_events">Upcoming Events</string>
     <string name="upcoming_assignments">Upcoming Assignments</string>
 
-    <string name="browse">Browse Events</string>
+    <!--Detail Titles-->
+    <string name="name_title">Assignment Name</string>
+    <string name="date_title">Date</string>
+    <string name="desc_title">Description</string>
+    <string name="subject_title">Subject</string>
+    <string name="event_title">Event Name</string>
+    <string name="location_title">Location</string>
+    <string name="time_title">Time</string>
 
-    <string name="event_title1">LinkedIn Lab</string>
-    <string name="event_title2">Network Cafe</string>
-    <string name="event_title3">GenerationYou Event</string>
+    <!--Field Hints-->
+    <string name="name_field">Name</string>
+    <string name="date_field">Date (DD/MM/YYYY)</string>
+    <string name="desc_field">Description</string>
+    <string name="due_date_field">Due Date (DD/MM/YYY)</string>
+    <string name="location_field">Location</string>
+    <string name="password_field">Password</string>
+    <string name="student_id_field">Student ID</string>
+    <string name="subject_field">Subject</string>
+    <string name="time_field">Time (HH:MM)</string>
 
-    <string name="event_time1">Next Tuesday</string>
-    <string name="event_time2">Next Friday</string>
-    <string name="event_time3">Next Wednesday</string>
+    <!--Buttons-->
+    <string name="add_assignment_btn">Add Assignment</string>
+    <string name="add_event_btn">Add Event</string>
+    <string name="create_event_btn">Create Event</string>
+    <string name="delete_btn">Delete</string>
+    <string name="login_btn">Login</string>
+    <string name="view_details_btn">View Details</string>
 
-    <string name="assignment_title1">Peer Design Review</string>
-    <string name="assignment_title2">Mid Semester Deliverables</string>
-    <string name="assignment_title3">Persona Interaction Design</string>
+    <!--My Journal Tabs-->
+    <string name="assignment_history_tab">Assignments History</string>
+    <string name="assignment_tab">View My Assignments</string>
+    <string name="event_history_tab">Events History</string>
+    <string name="event_tab">View My Events</string>
+    <string name="logout_tab">Log Out</string>
 
-    <string name="view_more">View more   >></string>
-
-    <string name="search">Search</string>
-    <string name="recent_events">Recent Events</string>
-    <string name="searchimage_description">Search bar image</string>
-    <string name="date1">5 Sep 2016</string>
-    <string name="date2">12 Sep 2016</string>
-    <string name="location1">UTS Underground</string>
-    <string name="location2">UTS Library</string>
-
-    <string name="image_description1">Event image 1</string>
-    <string name="image_description2">Event image 2</string>
 </resources>

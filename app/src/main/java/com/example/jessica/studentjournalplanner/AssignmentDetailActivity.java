@@ -31,11 +31,8 @@ public class AssignmentDetailActivity extends AppCompatActivity {
     private TextView descField;
     private TextView subjectField;
     private TextView dateField;
-    private Button deleteAssignmentBtn;
-    private DatabaseReference dataRef;
     private Firebase fRoot;
     private String link;
-    private Button deleteButton;
     private ImageButton journalButton;
     private ImageButton homeButton;
     private ImageButton browseButton;
@@ -84,7 +81,6 @@ public class AssignmentDetailActivity extends AppCompatActivity {
         subjectField.setEnabled(false);
         dateField = (TextView) findViewById(R.id.dateField);
         dateField.setEnabled(false);
-        deleteAssignmentBtn = (Button) findViewById(R.id.addEventBtn);
     }
 
     public void getData(Map<String, String> map)
@@ -97,19 +93,6 @@ public class AssignmentDetailActivity extends AppCompatActivity {
         descField.setText(desc);
         subjectField.setText(subject);
         dateField.setText(date);
-    }
-
-    public void submitData()
-    {
-        String date = dateField.getText().toString();
-        String subject = subjectField.getText().toString();
-        String name = nameField.getText().toString();
-        String desc = descField.getText().toString();
-        DatabaseReference childRef = dataRef.child(link);
-        childRef.child("Name").setValue(name);
-        childRef.child("Description").setValue(desc);
-        childRef.child("Subject").setValue(subject);
-        childRef.child("dueDate").setValue(date);
     }
 
     private void setupButton(){

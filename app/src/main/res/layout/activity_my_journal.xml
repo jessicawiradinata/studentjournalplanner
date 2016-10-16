@@ -7,9 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_gravity="center_horizontal"
-        android:background="#5066E5"
-        android:orientation="vertical"
-        >
+        android:background="@color/myJournalBlue"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -32,10 +31,6 @@
             android:textColor="@color/white"
             android:id="@+id/email" />
 
-
-
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -56,7 +51,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View My Assignments"/>
+                android:text="@string/assignment_tab"/>
 
         </LinearLayout>
 
@@ -72,7 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View My Events"/>
+                android:text="@string/event_tab"/>
 
         </LinearLayout>
 
@@ -88,7 +83,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Assignments History"/>
+                android:text="@string/assignment_history_tab"/>
 
         </LinearLayout>
 
@@ -104,7 +99,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Events History"/>
+                android:text="@string/event_history_tab"/>
 
         </LinearLayout>
 
@@ -120,14 +115,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Log out"/>
+                android:text="@string/logout_tab"/>
 
         </LinearLayout>
 
-
-
     </LinearLayout>
 
+    <!--TOOLBAR-->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
